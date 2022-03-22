@@ -23,7 +23,7 @@ public class Producer1 {
         var producer =
                 client.newBufferedProducer()
                         .stream(streamName)
-                        .batchSetting(BatchSetting.newBuilder().bytesLimit(819200).recordCountLimit(-1).ageLimit(-1).build())
+                        .batchSetting(BatchSetting.newBuilder().bytesLimit(409600).recordCountLimit(-1).ageLimit(-1).build())
                         .flowControlSetting(FlowControlSetting.newBuilder().bytesLimit(81920000).build())
                         .build();
         int count = 10000000;
