@@ -18,7 +18,8 @@ public class Producer1 {
 
         final String serviceUrl = "192.168.0.104:6570,192.168.0.250:6570,192.168.0.223:6570";
         var client = HStreamClient.builder().serviceUrl(serviceUrl).build();
-        var streamName = UUID.randomUUID().toString();
+        // var streamName = UUID.randomUUID().toString();
+        var streamName = "demo1";
         client.createStream(streamName);
         var producer =
                 client.newBufferedProducer()
