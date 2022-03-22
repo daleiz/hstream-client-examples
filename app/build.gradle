@@ -1,0 +1,25 @@
+plugins {
+    id 'application'
+}
+
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://s01.oss.sonatype.org/content/repositories/snapshots/'
+    }
+}
+
+
+configurations.all {
+    resolutionStrategy.cacheDynamicVersionsFor 0, 'minutes'
+}
+
+dependencies {
+    implementation 'io.hstream:hstreamdb-java:0.8.0-SNAPSHOT'
+}
+
+application {
+    mainClass = 'tempt.examples.Producer1'
+}
+
